@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { addTodo, deleteTodo } from '../modules/todos';
@@ -8,7 +8,7 @@ import Todo from '../components/Todo';
 
 const todoSelector = (state: ApplicationState) => state.todo.todos;
 
-const TodoContainer = () => {
+const TodoContainer: FC = () => {
   const [value, setValue] = useState('');
 
   const todos = useSelector(todoSelector);
